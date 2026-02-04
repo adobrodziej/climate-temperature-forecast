@@ -1,0 +1,119 @@
+name: meteo-ml
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+
+  # klasyka
+  - pandas
+  - scikit-learn
+  - statsmodels
+  - pmdarima
+  - matplotlib
+  - seaborn
+  - joblib
+
+  # gradient boosting
+  - xgboost
+  - lightgbm
+
+  # optymalizacja
+  - optuna
+
+  # notatniki
+  - jupyterlab
+
+  # --- ważne: rzeczy krytyczne dla TF pinujemy po stronie pip,
+  #     żeby nie rozjechały się zależności (numpy/scipy/ml-dtypes)
+  - pip:
+      # TensorFlow (Windows/CPU)
+      - tensorflow-intel==2.15.0
+
+      # Krytyczne piny zgodności dla TF 2.15 na Windows:
+      - numpy==1.24.3
+      - scipy==1.10.1
+      - ml-dtypes==0.2.0
+
+      # PyTorch (CUDA 12.1) – zgodne z RTX 40xx
+      - torch==2.2.2+cu121
+      - torchvision==0.17.2+cu121
+      - torchaudio==2.2.2+cu121
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+
+      # time-series frameworks
+      - pytorch-lightning==2.2.1
+      - pytorch-forecasting
+
+      # interpretacja
+      - shap
+
+# --- poniższe wpisy zostały dodane automatycznie 2025-09-01 na podstawie packages.txt ---
+      - absl-py
+      - aiohappyeyeballs
+      - aiohttp
+      - aiosignal
+      - arch
+      - astunparse
+      - async-timeout
+      - autopage
+      - cachetools
+      - cliff
+      - cloudpickle
+      - cmaes
+      - cmd2
+      - cramjam
+      - fastparquet
+      - filelock
+      - flatbuffers
+      - frozenlist
+      - fsspec
+      - gast
+      - google-auth
+      - google-auth-oauthlib
+      - google-pasta
+      - grpcio
+      - h5py
+      - ipywidgets
+      - jupyterlab-widgets
+      - keras
+      - libclang
+      - lightning
+      - lightning-utilities
+      - llvmlite
+      - markdown
+      - mpmath
+      - multidict
+      - narwhals
+      - networkx
+      - notebook
+      - numba
+      - oauthlib
+      - opt-einsum
+      - optuna
+      - packaging
+      - pbr
+      - plotly
+      - prettytable
+      - propcache
+      - property-cached
+      - protobuf
+      - pyarrow
+      - pyasn1
+      - pyasn1-modules
+      - pyperclip
+      - pyreadline3
+      - requests-oauthlib
+      - rsa
+      - shap
+      - slicer
+      - stevedore
+      - sympy
+      - termcolor
+      - werkzeug
+      - widgetsnbextension
+      - wrapt
+      - yarl
+
