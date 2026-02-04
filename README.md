@@ -71,7 +71,9 @@ przy umiarkowanej złożoności obliczeniowej.
    conda activate climate-ml
 
 2. Budowa cech:
+   ```bash
    python Scripts/build_global_features.py
 
 3. Trening modelu:
+   ```bash
    python Models/xgb_global.py
